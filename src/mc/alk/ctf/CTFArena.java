@@ -48,14 +48,14 @@ public class CTFArena extends Arena {
 	 * Save these flag spawns with the rest of the arena information
 	 */
 	@Persist
-	final HashMap<Integer,Location> flagSpawns = new HashMap<Integer,Location>();
+	final HashMap<Integer,Location> flagSpawns = new HashMap<>();
 
 	/// The following variables should be reinitialized and set up every match
 	FlagVictory scores;
 
-	final Map<Integer, Flag> flags = new ConcurrentHashMap<Integer, Flag>();
+	final Map<Integer, Flag> flags = new ConcurrentHashMap<>();
 
-	final ConcurrentHashMap<ArenaTeam, Flag> teamFlags = new ConcurrentHashMap<ArenaTeam, Flag>();
+	final ConcurrentHashMap<ArenaTeam, Flag> teamFlags = new ConcurrentHashMap<>();
 
 	public static int capturesToWin = 3;
 
@@ -63,9 +63,9 @@ public class CTFArena extends Arena {
 
 	Integer timerid, compassRespawnId, flagCheckId;
 
-	Map<Flag, Integer> respawnTimers = new HashMap<Flag,Integer>();
+	Map<Flag, Integer> respawnTimers = new HashMap<>();
 
-	final Map<ArenaTeam, Long> lastCapture = new ConcurrentHashMap<ArenaTeam, Long>();
+	final Map<ArenaTeam, Long> lastCapture = new ConcurrentHashMap<>();
 
 	final Set<Material> flagMaterials = new HashSet<Material>();
 
@@ -444,7 +444,7 @@ public class CTFArena extends Arena {
 
 	@Override
 	public List<String> getInvalidReasons(){
-		List<String> reasons = new ArrayList<String>();
+		List<String> reasons = new ArrayList<>();
 		if (flagSpawns == null || flagSpawns.size() < 2){
 			reasons.add("You need to add at least 2 flags!");}
 		reasons.addAll(super.getInvalidReasons());

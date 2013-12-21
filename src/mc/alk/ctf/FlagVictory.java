@@ -58,7 +58,7 @@ public class FlagVictory extends VictoryCondition implements DefinesLeaderRankin
 			if (!first) sb.append(separator);
 			ArenaTeam t = teams.get(i);
 			Flag f = teamFlags.get(t);
-			Map<String,String> map2 = new HashMap<String,String>();
+			Map<String,String> map2 = new HashMap<>();
 			map2.put("{team}", t.getDisplayName());
 			map2.put("{captures}",scores.getPoints(t)+"");
 			map2.put("{maxcaptures}",capturesToWin+"");
@@ -97,7 +97,7 @@ public class FlagVictory extends VictoryCondition implements DefinesLeaderRankin
 
 	@ArenaEventHandler
 	public void onMatchIntervalMessage(MatchIntervalMessageEvent event){
-		Map<String,String> map = new HashMap<String,String>();
+		Map<String,String> map = new HashMap<>();
 		map.put("{prefix}", match.getParams().getPrefix());
 		map.put("{timeleft}", TimeUtil.convertSecondsToString(event.getTimeRemaining()));
 		map.put("{score}", getScoreString());
@@ -107,7 +107,7 @@ public class FlagVictory extends VictoryCondition implements DefinesLeaderRankin
 	@ArenaEventHandler
 	public void onMatchTimeExpiredMessage(MatchTimeExpiredMessageEvent event){
 		StringBuilder sb = new StringBuilder();
-		Map<String,String> map = new HashMap<String,String>();
+		Map<String,String> map = new HashMap<>();
 		match.setMatchResult(scores.getMatchResult(match));
 		map.put("{prefix}", match.getParams().getPrefix());
 		String node = null;
