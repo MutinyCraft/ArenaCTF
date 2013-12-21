@@ -1,1 +1,1 @@
-Custom for of ArenaCTF by alkarinv.  All credit goes to alkarinv for the original work.
+Custom fork of ArenaCTF by alkarinv.  All credit goes to alkarinv for the original work.
